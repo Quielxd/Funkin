@@ -1,0 +1,25 @@
+import funkin.play.PlayState;
+import funkin.modding.module.Module;
+import funkin.util.Constants;
+import flixel.FlxG;
+
+class GhostTappingModule extends Module
+{
+	private function new()
+	{
+		super("GhostTapping");
+	}
+
+	override private function onStateChangeEnd(event)
+	{
+		Constants.GHOST_TAPPING = true;
+
+		super.onStateChangeEnd(event);
+	}
+
+	override private function onNoteGhostMiss(event)
+	{
+		event.cancel();
+		super.onNoteGhostMiss(event);
+	}
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Ghost Tapping",
+  "description": "Basic Script that adds ghost tapping",
+  "contributors": [
+    {
+      "name": "TechnikTil"
+    },
+    {
+      "name": "CrusherNotDrip"
+    }
+  ],
+  "api_version": "0.5.3",
+  "mod_version": "1.0.1",
+  "license": "Apache-2.0"
+}

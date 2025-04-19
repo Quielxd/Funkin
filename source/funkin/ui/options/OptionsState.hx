@@ -27,6 +27,16 @@ class OptionsState extends MusicBeatState
 
   override function create():Void
   {
+      FunkinSound.playMusic('Options',
+      {
+        startingVolume: 1,
+        overrideExisting: true,
+        restartTrack: true,
+        // Continue playing this music between states, until a different music track gets played.
+        persist: false
+    });
+
+
     persistentUpdate = true;
 
     var menuBG = new FlxSprite().loadGraphic(Paths.image('menuBG'));

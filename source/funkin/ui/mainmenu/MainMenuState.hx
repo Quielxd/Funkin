@@ -115,13 +115,9 @@ class MainMenuState extends MusicBeatState
         }));
     });
 
-    #if FEATURE_OPEN_URL
     // In order to prevent popup blockers from triggering,
     // we need to open the link as an immediate result of a keypress event,
     // so we can't wait for the flicker animation to complete.
-    var hasPopupBlocker = #if web true #else false #end;
-    createMenuItem('merch', 'mainmenu/merch', selectMerch, hasPopupBlocker);
-    #end
 
     createMenuItem('options', 'mainmenu/options', function() {
       startExitState(() -> new funkin.ui.options.OptionsState());
@@ -132,16 +128,16 @@ class MainMenuState extends MusicBeatState
     });
 
     // Reset position of menu items.
-    var spacing = 160;
+    var spacing = 140;
     var top = (FlxG.height - (spacing * (menuItems.length - 1))) / 2;
     for (i in 0...menuItems.length)
     {
       var menuItem = menuItems.members[i];
-      menuItem.x = FlxG.width / 2;
+      menuItem.x = 850;
       menuItem.y = top + spacing * i;
       menuItem.scrollFactor.x = 0.0;
       // This one affects how much the menu items move when you scroll between them.
-      menuItem.scrollFactor.y = 0.4;
+      menuItem.scrollFactor.y = 0.1;
     }
 
     menuItems.selectItem(rememberedSelectedIndex);
