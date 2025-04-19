@@ -93,7 +93,7 @@ class MainMenuState extends MusicBeatState
       FlxFlicker.flicker(magenta, 1.1, 0.15, false, true);
     });
 
-    FlxTween.tween(menuItem, {x = 850, y = top + spacing * i;}, 2)
+    FlxTween.tween(menuItem, {x = 850, y = top + spacing * i;}, 2);
 
     menuItems.enabled = true; // can move on intro
     createMenuItem('storymode', 'mainmenu/storymode', function() startExitState(() -> new StoryMenuState()));
